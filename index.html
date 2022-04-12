@@ -1,70 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>JavaScript buoi 5</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <!-- Bootstrap CSS -->
+    <title>CodePro.vn - CyberSoft.edu.vn</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="./images/icons/favicon.ico" />
+    <!--===============================================================================================-->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
+      type="text/css"
+      href="./vendor/bootstrap/css/bootstrap.min.css"
     />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./vendor/animate/animate.css"
+    />
+    <!--===============================================================================================-->
+
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <!--===============================================================================================-->
   </head>
+
   <body>
-    <!-- <button id="btnClick" class="btn btn-success" onclick="demoClick()">Click</button> -->
-    <button id="btnClick" class="btn btn-success">Click</button>
+    <div class="container-contact100">
+      <div
+        class="contact100-map"
+        id="google_map"
+        data-map-x="40.722047"
+        data-map-y="-73.986422"
+        data-pin="images/icons/map-marker.png"
+        data-scrollwhell="0"
+        data-draggable="1"
+      ></div>
 
-    <hr />
-    <button id="btnTaothe" class="btn btn-success">create-tag</button>
-    <div id="divContent"></div>
+      <div class="contact100-more">
+        <i class="zmdi zmdi-phone-in-talk"></i>
+        (+84) 961.05.10.14
+      </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">test number</div>
-            <div class="card-body">
-              <div class="form-group">
-                <label for="">number inpput</label>
-                <input
-                  type="text"
-                  id="txtNumber"
-                  class="form-control"
-                />
-               
-              </div>
-              <button id="txtCheck" class="btn btn-success">check number</button>
-            </div>
-            <div id="footer_check" class="card-footer text-muted">Footer</div>
+      <div class="wrap-contact100">
+        <div>
+          <img
+            src="./images/cybersoft.png"
+            alt="Front End CyberSoft"
+            width="40%"
+          />
+          <span style="padding: 20px"></span>
+          <!-- <img src="./images/codepro.png" alt="Front End CyberSoft" width="30%" /> -->
+
+          <div style="clear: both"></div>
+          <span class="contact100-form-title"> TÍNH CƯỚC GRAB </span>
+          <h2>Vui lòng chọn loại xe:</h2>
+          <ul>
+            <li class="type">
+              <input type="radio" name="selector" id="grabX" />
+              <label for="grabX">Grab X</label>
+
+              <div class="check"></div>
+            </li>
+
+            <li class="type">
+              <input type="radio" name="selector" id="grabSUV" />
+              <label for="grabSUV">Grab SUV</label>
+              <div class="check"></div>
+            </li>
+
+            <li class="type">
+              <input type="radio" name="selector" id="grabBlack" />
+              <label for="grabBlack">Grab Black</label>
+              <div class="check"></div>
+            </li>
+          </ul>
+        </div>
+        <div style="clear: both"></div>
+
+        <form class="contact100-form">
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Name is required"
+          >
+            <h2>Nhập vào số KM</h2>
+            <input
+              id="numberKm"
+              class="input100"
+              type="text"
+              name="name"
+              placeholder="Số KM ..."
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Name is required"
+          >
+            <h2>Nhập thời gian chờ</h2>
+            <input
+              id="timeWait"
+              class="input100"
+              type="text"
+              name="name"
+              placeholder="Thời gian chờ  ..."
+            />
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="wrap-contact100-form-btn">
+            <div class="contact100-form-bgbtn"></div>
+            <button id="btnTinhtien" type="button" class="contact100-form-btn">
+              TÍNH TIỀN
+            </button>
+          </div>
+          <div class="wrap-contact100-form-btn">
+            <div class="contact100-form-bgbtn"></div>
+            <button
+              type="button"
+              class="contact100-form-btn"
+              data-toggle="modal"
+              data-target="#myModal"
+              id="btnHoadon"
+            >
+              IN HÓA ĐƠN
+            </button>
+          </div>
+        </form>
+
+        <div style="clear: both"></div>
+        <div id="divThanhTien" class="dongia">
+          <h2>
+            Thành tiền:
+            <span id="xuatTien" class="xuatTien"></span>
+            vnd
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to Open the Modal -->
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Hoa don</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <table class="table">
+              <th>
+                <tr>
+                  <th>Chi tiet</th>
+                  <th>Su dung</th>
+                  <th>Don gia</th>
+                  <th>Thanh tien</th>
+                </tr>
+              </th>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Close
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <!-- Optional JavaScript -->
 
-    <script src="./main.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+    <script src="./js/main.js"></script>
+
+    <!--===============================================================================================-->
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="./vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="./vendor/bootstrap/js/popper.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+    <script src="./js/map-custom.js"></script>
+    <!--===============================================================================================-->
   </body>
 </html>
